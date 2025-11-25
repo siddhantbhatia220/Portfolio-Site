@@ -33,12 +33,16 @@ export const ContactSection = () => {
 
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // TODO: Integrate EmailJS, Formspree, or your own backend here.
+    // Example with EmailJS:
+    // emailjs.send('SERVICE_ID', 'TEMPLATE_ID', formData, 'PUBLIC_KEY')...
+    
+    // Currently simulating network request
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     toast({
-      title: 'Message Sent!',
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      title: 'Message Sent (Demo)',
+      description: "This form is currently in demo mode. Please email me directly.",
     });
     
     setFormData({ name: '', email: '', message: '' });
@@ -115,15 +119,11 @@ export const ContactSection = () => {
                 <ul className="space-y-2 text-foreground/80">
                   <li className="flex items-center gap-2">
                     <span className="text-accent">▹</span>
-                    Consulting & Code Reviews
+                    Internships
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-accent">▹</span>
-                    Speaking Engagements
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-accent">▹</span>
-                    Technical Writing
+                    Freelance Projects
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-accent">▹</span>
