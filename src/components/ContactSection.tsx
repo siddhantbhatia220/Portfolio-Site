@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Github, Linkedin, Twitter, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -34,9 +34,6 @@ export const ContactSection = () => {
     setIsSubmitting(true);
     
     // TODO: Integrate EmailJS, Formspree, or your own backend here.
-    // Example with EmailJS:
-    // emailjs.send('SERVICE_ID', 'TEMPLATE_ID', formData, 'PUBLIC_KEY')...
-    
     // Currently simulating network request
     await new Promise(resolve => setTimeout(resolve, 1500));
     
