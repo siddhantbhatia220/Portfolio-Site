@@ -45,7 +45,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Decorative gradient at bottom */}
+      {}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary opacity-50" />
     </footer>
   );
