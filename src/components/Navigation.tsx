@@ -96,20 +96,15 @@ export const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button
+              asChild
               variant="default"
               size="sm"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/Siddhant_Bhatia_CV.pdf';
-                link.download = 'Siddhant_Bhatia_CV.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
             >
-              <Download className="w-4 h-4 mr-2" />
-              Download CV
+              <a href="/Siddhant_Bhatia_CV.pdf" download="Siddhant_Bhatia_CV.pdf">
+                <Download className="w-4 h-4 mr-2" />
+                Download CV
+              </a>
             </Button>
           </div>
 
@@ -147,21 +142,15 @@ export const Navigation = () => {
                 </motion.button>
               ))}
               <Button
+                asChild
                 variant="default"
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium mt-4"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/Siddhant_Bhatia_CV.pdf';
-                  link.download = 'Siddhant_Bhatia_CV.pdf';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                  setIsMobileMenuOpen(false);
-                }}
               >
-                <Download className="w-5 h-5 mr-2" />
-                Download CV
+                <a href="/Siddhant_Bhatia_CV.pdf" download="Siddhant_Bhatia_CV.pdf" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Download className="w-5 h-5 mr-2" />
+                  Download CV
+                </a>
               </Button>
             </div>
           </motion.div>
