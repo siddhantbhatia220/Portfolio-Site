@@ -10,7 +10,12 @@ const socialLinks = [
   { icon: Github, href: 'https://github.com/siddhantbhatia220', label: 'GitHub', color: 'hover:text-primary' },
   { icon: Linkedin, href: 'https://www.linkedin.com/in/siddhant-bhatia-48142a338', label: 'LinkedIn', color: 'hover:text-accent' },
   { icon: Twitter, href: 'https://twitter.com/siddhantbhatia', label: 'Twitter', color: 'hover:text-secondary' },
-  { icon: Mail, href: 'mailto:siddhant@example.com', label: 'Email', color: 'hover:text-primary' },
+  { 
+    icon: Mail, 
+    href: 'mailto:your.actual.email@gmail.com', // UPDATE THIS
+    label: 'Email', 
+    color: 'hover:text-primary' 
+  },
 ];
 
 export const ContactSection = () => {
