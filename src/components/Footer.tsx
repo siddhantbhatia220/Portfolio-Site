@@ -19,7 +19,7 @@ export const Footer = () => {
             <p className="text-foreground/70 flex items-center gap-2 justify-center md:justify-start">
               Designed & Built with{' '}
               <Heart className="text-primary w-4 h-4 animate-glow-pulse" fill="currentColor" />{' '}
-              by Siddhant Sharma
+              by Siddhant Bhatia
             </p>
             <p className="text-sm text-muted-foreground mt-2">
               Powered by React, TypeScript, Tailwind CSS & Framer Motion
