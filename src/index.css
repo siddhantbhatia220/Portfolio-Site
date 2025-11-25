@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic Dark Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Dark base colors */
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Neon cyan primary */
+    --primary: 188 78% 41%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 188 100% 50%;
+
+    /* Deep purple secondary */
+    --secondary: 258 90% 66%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted dark surfaces */
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Bright cyan accent */
+    --accent: 186 100% 55%;
+    --accent-foreground: 222 47% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 188 78% 41%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradient stops */
+    --gradient-start: 222 47% 5%;
+    --gradient-mid: 258 50% 15%;
+    --gradient-end: 188 50% 15%;
+
+    /* Glass effect */
+    --glass-bg: 222 47% 8% / 0.6;
+    --glass-border: 210 40% 98% / 0.1;
+
+    /* Shadow with glow */
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --shadow-purple: 0 0 60px hsl(var(--secondary) / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    background: linear-gradient(135deg, 
+      hsl(var(--gradient-start)) 0%, 
+      hsl(var(--gradient-mid)) 50%, 
+      hsl(var(--gradient-end)) 100%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* Smooth animations */
+  @media (prefers-reduced-motion: no-preference) {
+    * {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-white/10;
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--accent)),
+      hsl(var(--secondary))
+    );
+  }
+
+  /* Neon glow effect */
+  .neon-glow {
+    text-shadow: 0 0 10px hsl(var(--primary-glow) / 0.8),
+                 0 0 20px hsl(var(--primary-glow) / 0.6),
+                 0 0 30px hsl(var(--primary-glow) / 0.4);
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow), var(--shadow-purple);
+  }
+
+  /* Animated gradient border */
+  .gradient-border {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: var(--radius);
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, 
+      hsl(var(--primary)), 
+      hsl(var(--secondary)));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, 
+                  linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
